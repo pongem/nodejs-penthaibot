@@ -1,3 +1,5 @@
+var request = require('request')
+
 module.exports = {
     sendText: function sendText(sender, text) {
         let data = {
