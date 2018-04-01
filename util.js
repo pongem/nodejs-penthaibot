@@ -6,7 +6,7 @@ module.exports = {
             to: sender,
             messages: [{
                 type: 'text',
-                text: 'สวัสดี'
+                text: text
             }]
         }
         request({

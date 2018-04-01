@@ -33,14 +33,14 @@ app.post('/callback', (req, res) => {
                 to: 'th'
             };
             client.translate(params, function(err, data) {
-                console.log(data);
+                console.log("translate",data);
                 util.sendText(sender, data);
             });
         }
     });
 
     if (text === 'สวัสดี' || text === 'Hello' || text === 'hello') {
-        util.sendText(sender, text)
+        util.sendText(sender, "สวัสดี")
     }
     res.sendStatus(200)
 })
