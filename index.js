@@ -25,7 +25,7 @@ app.post('/callback', (req, res) => {
         text: text
     }, function(err, data) {
         if (data === "th") {
-            util.sendText(sender, "ผมแปลไทยเป็นไทยไม่ได้นะฮะ");
+            util.sendText(replyToken, "ผมแปลไทยเป็นไทยไม่ได้นะฮะ");
         } else {
 
             var params = {
@@ -34,13 +34,13 @@ app.post('/callback', (req, res) => {
             };
             client.translate(params, function(err, data) {
                 console.log("translate",data);
-                util.sendText(sender, data);
+                util.sendText(replyToken, data);
             });
         }
     });
 
     if (text === 'สวัสดี' || text === 'Hello' || text === 'hello') {
-        util.sendText(sender, "สวัสดี")
+        util.sendText(replyToken, "สวัสดี")
     }
     res.sendStatus(200)
 })

@@ -1,9 +1,9 @@
 var request = require('request')
 
 module.exports = {
-    sendText: function sendText(sender, text) {
+    sendText: function sendText(replyToken, text) {
         let data = {
-            to: sender,
+            replyToken: replyToken,
             messages: [{
                 type: 'text',
                 text: text
