@@ -5,8 +5,8 @@ const express = require('express');
 
 // create LINE SDK config from env variables
 const config = {
-  channelAccessToken: process.env.CHANNEL_ACCESS_TOKEN,
-  channelSecret: process.env.CHANNEL_SECRET,
+  channelAccessToken: "v05A3MBRmEb9r+oyyBc4c9tff6quwHFKqe1+a71JweV8Ajc2bfzHn/PM04P66wj3w8Y0DIo33s1zgHN5UXrPc57ZHVF75q5RpU/h1yW7Yyp214+xAv3Acgl3lzyDQ66j3A+koTU3vFS8HP4AFe/lbgdB04t89/1O/w1cDnyilFU=",
+  channelSecret: "2d20ffa36c0d5f8326e1da86db7ac49d",
 };
 
 // create LINE SDK client
@@ -43,7 +43,7 @@ function handleEvent(event) {
 }
 
 // listen on port
-const port = process.env.PORT || 3000;
+const port = 80;
 app.listen(port, () => {
   console.log(`listening on ${port}`);
 });
