@@ -99,7 +99,7 @@ function sendText (sender, text) {
   request({
     headers: {
       'Content-Type': 'application/json',
-      'Authorization': 'Bearer key Api'
+      'Authorization': `Bearer ${process.env.CHANNEL_ACCESS_TOKEN}`
     },
     url: 'https://api.line.me/v2/bot/message/push',
     method: 'POST',
