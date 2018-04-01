@@ -3,7 +3,7 @@ var bodyParser = require('body-parser')
 var request = require('request')
 var app = express()
 
-var util = require('util');
+var util = require('./util.js');
 
 app.use(bodyParser.json())
 
