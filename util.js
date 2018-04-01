@@ -9,12 +9,13 @@ module.exports = {
                 text: text
             }]
         }
+        console.log("data", data);
         request({
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${process.env.CHANNEL_ACCESS_TOKEN}`
             },
-            url: 'https://api.line.me/v2/bot/message/push',
+            url: 'https://api.line.me/v2/bot/message/reply',
             method: 'POST',
             body: data,
             json: true
