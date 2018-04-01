@@ -62,6 +62,14 @@
 //   console.log(`listening on ${port}`);
 // });
 
+const express = require('express');
+const app = express();
+
 app.post('/callback', (req, res) => {
     res.sendStatus(200)
 })
+
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`listening on ${port}`);
+});
