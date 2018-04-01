@@ -12,6 +12,7 @@ const config = {
 // create LINE SDK client
 const client = new line.Client(config);
 
+
 // create Express app
 // about Express itself: https://expressjs.com/
 const app = express();
@@ -43,7 +44,20 @@ function handleEvent(event) {
 }
 
 // listen on port
-const port = 80;
-app.listen(port, () => {
-  console.log(`listening on ${port}`);
-});
+var https = require('https');
+var fs = require('fs');
+
+var options = {
+    key: fs.readFileSync('encryption/private.key'),
+    cert: fs.readFileSync('encryption/mydomain.crt'),
+    requestCert: false,
+    rejectUnauthorized: false
+};
+
+const server = https.createServer(options, app).listen(443, () => {
+  console.log('server running at ' + 443)
+})
+// const port = 82;
+// app.listen(port, () => {
+//   console.log(`listening on ${port}`);
+// });
